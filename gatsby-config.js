@@ -1,18 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `tomWritesCode`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Tom Whitaker`,
+      summary: `New blog with MDX posts`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Blog using MDX posts`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `@tomwritescode`,
     },
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Blog Posts`,
+        remote: `https://github.com/tomWritesCode/MDX_Blog_Posts`,
+        branch: `main`,
+        patterns: [`*`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
