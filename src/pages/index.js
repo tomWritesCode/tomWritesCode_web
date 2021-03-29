@@ -1,12 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import Header from '../components/Header'
 
 const Index = () => {
   return (
-    <>
-      <h1 className="text-3xl text-right">tomWritesCode</h1>
-      <Link to={"/blog"}>Ohh the blog</Link>
-    </>
+    <div className="">
+      <Header />
+    </div>
   )
 }
 

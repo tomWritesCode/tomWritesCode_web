@@ -6,7 +6,6 @@ module.exports = {
       summary: `New blog with MDX posts`,
     },
     description: `Blog using MDX posts`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `@tomwritescode`,
     },
@@ -14,6 +13,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-git`,
       options: {
@@ -21,13 +21,6 @@ module.exports = {
         remote: `https://github.com/tomWritesCode/MDX_Blog_Posts`,
         branch: `main`,
         patterns: [`*`],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
       },
     },
     {
@@ -91,7 +84,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ 'content:encoded': node.html }],
                 })
               })
             },
@@ -114,7 +107,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
           },
         ],
       },
