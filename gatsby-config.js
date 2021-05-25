@@ -13,16 +13,23 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-git`,
       options: {
         name: `Blog Posts`,
         remote: `https://github.com/tomWritesCode/MDX_Blog_Posts`,
         branch: `main`,
+        local: `${__dirname}/src/posts`,
         patterns: [`*`],
       },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
