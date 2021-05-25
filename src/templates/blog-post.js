@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ data: { mdx }, location }) => {
   return (
     <>
       <Header />
-      <div className="px-8 sm:px-4 pb-12">
+      <div className="px-8 sm:px-4 pb-12 max-w-full">
         <MDXProvider components={components}>
           <MDXRenderer components={components}>{mdx.body}</MDXRenderer>
         </MDXProvider>
