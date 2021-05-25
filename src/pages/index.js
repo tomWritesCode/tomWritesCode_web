@@ -5,10 +5,10 @@ import { H2 } from '../styles/MDX_Components';
 
 const Index = () => {
   return (
-    <div className="px-8">
+    <div>
       <Header />
 
-      <div>
+      <div className="px-4 md:px-8">
         <H2>Hi, my name is Tom. Thanks for dropping by.</H2>
       </div>
     </div>

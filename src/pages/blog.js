@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
     <>
       <SEO title="Blog Posts" />
       <Header />
-      <div className=" pl-4 pr-4 grid grid-cols-6 gap-2">
+      <div className="px-4 md:px-8 grid grid-cols-6 gap-2">
         <div className="col-start-1 col-end-2 hidden lg:grid">
           <h3 className="text-xl mb-2">Subjects:</h3>
           <ul className="pl-4" style={{ listStyle: 'none' }}>

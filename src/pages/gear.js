@@ -7,7 +7,7 @@ const Gear = () => {
     <div className="">
       <Header />
 
-      <div className="px-8">
+      <div className="px-4 md:px-8">
         <div>
           <H3>Desk Setup</H3>
           <H5>13" M1 Macbook Pro 2020</H5>
