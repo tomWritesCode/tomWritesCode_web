@@ -1,19 +1,14 @@
 import * as React from 'react'
-// import { Link } from 'gatsby'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 import { H2, H4 } from '../styles/MDX_Components';
 
 const Index = () => {
   return (
-    <div>
-      <Header />
-
-      <div className="px-4 md:px-8">
+      <Layout>
         <H2>Hi, my name is Tom. Thanks for dropping by.</H2>
 
         <H4>I am a Developer and Photographer based in Sydney, Australia.</H4>
-      </div>
-    </div>
+      </Layout>
   )
 }
 

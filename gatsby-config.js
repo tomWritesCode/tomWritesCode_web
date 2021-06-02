@@ -17,6 +17,16 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-postcss`,
+  {
+    resolve: `gatsby-plugin-umami`,
+    options: {
+      websiteId: process.env.UMAMI_WEBSITE_ID,
+      srcUrl: process.env.UMAMI_SRC_URL,
+      includeInDevelopment: false,
+      autoTrack: true,
+      respectDoNotTrack: true
+    },
+  },
     {
     resolve:`gatsby-source-cloudinary`,
     options: {

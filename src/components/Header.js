@@ -19,7 +19,7 @@ const Navigation = () => {
 
 export default function Header() {
   return (
-    <div className="p-3 pt-4">
+    <div className="p-3 pt-4 lg:mr-4">
       <Link className="no-underline" to={'/'}>
         <h1 className="m-0 mt-0 text-4xl text-right">tomWritesCode</h1>
       </Link>
