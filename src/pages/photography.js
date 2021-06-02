@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from '../components/Header'
+import Layout from '../components/layout'
 import {
   H1,
   H2,
@@ -20,6 +20,7 @@ const Photography = () => {
     allCloudinaryMedia {
       edges {
         node {
+          id
           secure_url
         }
       }
@@ -27,10 +28,7 @@ const Photography = () => {
   }
   `)
   return (
-    <div>
-      <Header />
-
-      <div className="px-4 md:px-8 mb-10">
+      <Layout title="Photography">
         <div>
           <H3>Photo gear</H3>
 
@@ -55,12 +53,11 @@ const Photography = () => {
           <H3>My Work</H3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center items-center">
               {images.allCloudinaryMedia.edges.map(image => (
-                <img className="max-h-96" src={image.node.url} />
+                <img key={image.node.id} className="max-h-96" src={image.node.secure_url} />
               ))}
             </div>
         </div>
-      </div>
-    </div>
+    </Layout>
   )
 }
 

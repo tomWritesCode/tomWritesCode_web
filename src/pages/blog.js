@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
-import Header from '../components/Header'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMdx.edges
@@ -13,9 +11,7 @@ const BlogIndex = ({ data, location }) => {
   const tagsList = Array.from(tags)
   if (posts.length === 0) {
     return (
-      <Layout location={location}>
-        <Header />
-        <SEO title="All posts" />
+      <Layout title="Blog Posts">
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -27,9 +23,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <>
-      <SEO title="Blog Posts" />
-      <Header />
+    <Layout title="Blog Posts">
       <div className="px-4 md:px-8 grid grid-cols-6 gap-2">
         <div className="col-start-1 col-end-2 hidden lg:grid">
           <h3 className="text-xl mb-2">Subjects:</h3>
@@ -61,7 +55,7 @@ const BlogIndex = ({ data, location }) => {
           ))}
         </ol>
       </div>
-    </>
+    </Layout>
   )
 }
 
