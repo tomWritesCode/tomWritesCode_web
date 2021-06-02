@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `tomWritesCode`,
@@ -12,7 +14,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-postcss`,
+    {
+    resolve:`gatsby-source-cloudinary`,
+    options: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    apiKey: process.env.CLOUDINARY_API_KEY,
+    apiSecret: process.env.CLOUDINARY_API_SECRET,
+    resourceType: `image`,
+    prefix: 'Photography/'
+    }
+},
     {
       resolve: `gatsby-source-git`,
       options: {
@@ -67,7 +81,7 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-  
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

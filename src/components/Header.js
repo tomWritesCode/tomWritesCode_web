@@ -7,6 +7,9 @@ const Navigation = () => {
       <Link to={'/blog/'} className="no-underline pl-2 pr-2 text-2xl">
         Blog
       </Link>
+      <Link to={'/photography'} className="no-underline pl-2 pr-2 text-2xl">
+        Photography
+      </Link>
       <Link to={'/gear'} className="no-underline pl-2 pr-2 text-2xl">
         Gear
       </Link>

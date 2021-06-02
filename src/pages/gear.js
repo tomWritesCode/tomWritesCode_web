@@ -4,19 +4,20 @@ import { H1, H2, H3, H4, H5, H6, P, HR, UL, LI } from '../styles/MDX_Components.
 
 const Gear = () => {
   return (
-    <div className="">
+    <div>
       <Header />
 
-      <div className="px-4 md:px-8">
+      <div className="px-4 md:px-8 mb-20">
         <div>
           <H3>Desk Setup</H3>
-          <H5>13" M1 Macbook Pro 2020</H5>
-          <P>I really like the M1 Mac for development</P>
+
+          <H5>13" M1 Macbook Pro 2020 (Work Laptop)</H5>
+          <P>I really like the M1 Mac for development, building an iOS project in XCode is insanely fast. There was some initial setup that was a little bit extra than normal but once that was out of the way it's great.</P>
 
           <HR />
 
           <H5>ALOGIC Universal Twin HD Docking Station</H5>
-          <P>I love this monitor</P>
+          <P>This was a new addition after my USB-C dock had the HDMI port stop working after about 4 years so I was due for an upgrade. This one was chosen because of 'Display Link' which lets me use multiple monitors with the M1 Macbook Pro.</P>
 
           <HR />
 
@@ -36,44 +37,38 @@ const Gear = () => {
           <HR />
 
           <H5>LG 34" 21:9 Ultrawide</H5>
-          <P>I love this monitor</P>
+          <P>After going with an ultrawide monitor I don't think I would ever go back. Having so much screen real estate is really handy for having multiple applications open and is amazing when gaming.</P>
 
           <HR />
 
           <H5>Dell 24" Vertical</H5>
-          <P>I love this monitor</P>
+          <P>I added this monitor recently to go with the ultrawide, giving me a little more screen real estate.</P>
 
           <HR />
 
           <H5>Keychorn K2</H5>
-          <P>I love this monitor</P>
-
-          <HR />
-
-          <H5>Keychorn K2</H5>
-          <P>I love this monitor</P>
+          <P>A nice mechanical keyboard can really make your desk both asthetically beautiful and also is a great addition for typing all day.</P>
 
           <HR />
 
           <H5>Logitech MX Master 3</H5>
-          <P>I love this monitor</P>
+          <P>This mouse has become one of the centerpoints of my desk, the comfort and customisation available even down to a per program basis is fantastic.</P>
 
           <HR />
 
           <H5>Turtle Beach TAC</H5>
-          <P>I love this monitor</P>
+          <P>I found this for a great deal and it was a great addition to the desk for both micrphone in and headphones out. The additional features of a digital noise gate and audio feedback from the micrphone are some features I now can't do without.</P>
 
           <HR />
 
           <H5>Rode VideoMic NTG</H5>
-          <P>I love this monitor</P>
+          <P>I was so excited when this microphone was announced as it was an amazing blend of a desktop microphone as well as the on camera micrphone for doing video work.</P>
 
           <HR />
 
           <H5>Rode PSA-1</H5>
-          <P>I love this monitor</P>
+          <P>The PSA-1 is the perfect desk companion for the microphone in your home office. I have mine mounted to the side of the table so I can swing it in and out when needed.</P>
 
-          <HR />
         </div>
       </div>
     </div>
