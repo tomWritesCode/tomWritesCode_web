@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Header from '../components/Header'
+import Layout from '../components/layout'
 import { H1, H2, H3, H4, H5, H6, P, HR, UL, LI } from '../styles/MDX_Components.js'
 
 const components = {
@@ -20,14 +20,12 @@ const components = {
 
 const BlogPostTemplate = ({ data: { mdx }, location }) => {
   return (
-    <>
-      <Header />
-      <div className="px-8 sm:px-4 pb-12 max-w-full">
+      // <div className="px-8 sm:px-4 pb-12 max-w-full">
+    <Layout>
         <MDXProvider components={components}>
           <MDXRenderer components={components}>{mdx.body}</MDXRenderer>
         </MDXProvider>
-      </div>
-    </>
+    </Layout>
   )
 }
 
