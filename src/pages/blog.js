@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Bio from '../components/bio'
-import Layout from '../components/layout'
-
+import Layout from '../components/layout';
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMdx.edges
@@ -14,43 +13,47 @@ const BlogIndex = ({ data, location }) => {
       <Layout title="Blog Posts">
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          Well looks like there are no posts here at the minute, maybe check back another time.
         </p>
       </Layout>
     )
   }
 
+  const maybeS = (number) => {
+    return number === 1 ? '' : "'s"
+  }
+
   return (
     <Layout title="Blog Posts">
-      <div className="px-4 md:px-8 grid grid-cols-6 gap-2">
-        <div className="col-start-1 col-end-2 hidden lg:grid">
-          <h3 className="text-xl mb-2">Subjects:</h3>
-          <ul className="pl-4" style={{ listStyle: 'none' }}>
-            <li>All posts</li>
-            {tagsList.map(tag => (
-              <li key={tag} className="">
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="px-4 md:px-8">
+        <h2 className="py-4 text-3xl lg:text-4xl">Blog</h2>
         <ol
-          className="col-start-1 md:col-start-2 col-end-7"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
           style={{ listStyle: `none` }}
         >
-          <h2 className="text-2xl">Posts</h2>
           {posts.map(post => (
-            <Link to={`/blog/${post.node.frontmatter.slug}`}>
-              <li className="mt-4 mb-4" key={post.node.id}>
-                <h3 className="text-xl">{post.node.frontmatter.title}</h3>
-                <p className="mb-0 font-extralight">
+            <Link
+              className="col-span-1"
+              to={`/blog/${post.node.frontmatter.slug}`}
+            >
+              <li
+                className="mt-4 mb-4 p-4 border-solid border border-gray-200 hover:border-indigo-400 hover:shadow rounded-xl"
+                key={post.node.id}
+              >
+                <h3 className="py-4 text-2xl lg:text-3xl underline">
+                  {post.node.frontmatter.title}
+                </h3>
+                <p className="text-l mb-2 font-extralight">
                   Published: {post.node.frontmatter.date}
                 </p>
-                <p className="mb-0">{post.node.frontmatter.description}</p>
+                <p className="text-l mb-2">
+                  {post.node.frontmatter.description}
+                </p>
+                <p className="text-l font-extralight text-right">
+                  Read time: {post.node.timeToRead} minute
+                  {maybeS(post.node.timeToRead)}
+                </p>
               </li>
-              <hr className="mt-0 mb-0 border-solid border border-indigo-600" />
             </Link>
           ))}
         </ol>
@@ -63,11 +66,12 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    allMdx(sort: { order: ASC, fields: frontmatter___date }) {
+    allMdx(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
           excerpt
           id
+          timeToRead
           frontmatter {
             title
             date

@@ -30,7 +30,7 @@ const Photography = () => {
   return (
       <Layout title="Photography">
         <div>
-          <H3>Photo gear</H3>
+          <H2>Photo gear</H2>
 
           <H5>Fujifilm X100F</H5>
           <P>
@@ -50,7 +50,7 @@ const Photography = () => {
 
           <HR />
 
-          <H3>My Work</H3>
+          <H2>My Work</H2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center items-center">
               {images.allCloudinaryMedia.edges.map(image => (
                 <img key={image.node.id} className="max-h-96" src={image.node.secure_url} />

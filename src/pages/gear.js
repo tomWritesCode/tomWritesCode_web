@@ -6,7 +6,7 @@ const Gear = () => {
   return (
     <Layout title="Gear">
       <div>
-        <H3>Desk Setup</H3>
+        <H2>Desk Setup</H2>
 
         <H5>13" M1 Macbook Pro 2020 (Work Laptop)</H5>
         <P>
