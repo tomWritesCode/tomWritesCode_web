@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import { H2, H4 } from '../styles/MDX_Components';
 
 const Index = () => {
