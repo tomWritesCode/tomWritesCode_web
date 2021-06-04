@@ -3,9 +3,12 @@ import { Link } from 'gatsby'
 
 const Navigation = () => {
   return (
-    <div className="text-right p-3">
+    <div className="text-right p-3 overflow-x-scroll">
       <Link to={'/blog/'} className="no-underline pl-2 pr-2 text-2xl">
         Blog
+      </Link>
+      <Link to={'/projects/'} className="no-underline pl-2 pr-2 text-2xl">
+        Projects
       </Link>
       <Link to={'/photography'} className="no-underline pl-2 pr-2 text-2xl">
         Photography
